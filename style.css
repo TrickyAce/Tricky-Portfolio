@@ -1,0 +1,81 @@
+body {
+    background: #091924;
+    display: flex;
+    justify-content: center;
+}
+button {
+    background: rgb(0, 174, 255);
+    width: 200px;
+    height: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    border-color: rgb(0, 174, 255);
+    margin-top: 20px;
+    color: white;
+    font-size: medium;
+    font-weight: bold;
+}
+
+button:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    background: rgb(15, 163, 35);
+    border-color: rgb(210, 220, 224);
+    color: rgb(195, 214, 178);
+}
+
+h2, p, ul{
+    color: rgb(217, 228, 238);
+}
+
+h3{
+    color: rgb(109, 109, 223);
+    text-decoration: underline;
+}
+
+h1 {
+    color: rgb(0, 174, 255);
+    margin-top: 150px;
+}
+
+.part2{
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+}
+
+.contact {
+    display: flex;
+    margin-bottom: 50px;
+}
+
+img{
+    margin-left: 100px;
+}
+
+.sample {
+    color: rgb(184, 187, 196);
+}
+
+.sample:hover {
+    color:rgb(15, 163, 35)
+}
+.contact i {
+  margin-left: 16px;
+  color: #089c6b;
+}
+
+#wa, .wa:hover{
+    color: rgb(0, 255, 85);
+}
+#email, .mail:hover{
+    color: white;
+}
+
+#ig, .ig:hover {
+    color: rgb(255, 123, 0);
+}
+
+.phone:hover {
+    color:  #089c6b
+}
