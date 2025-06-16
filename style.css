@@ -1,23 +1,10 @@
-/* ========== GLOBAL ========== */
+
 body {
   background: #091924;
   margin: 0;
   padding: 20px;
-  font-family: sans-serif;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 60px;
-}
-
-.main-content, .part2 {
-  width: 45%;
-}
-
-/* ========== BUTTON ========== */
 .cta-button {
   background: #00aeff;
   color: white;
@@ -39,48 +26,130 @@ body {
   transform: scale(1.05);
 }
 
-/* ========== TEXT STYLES ========== */
 h1, h2, h3, p, ul {
-  margin-bottom: 20px;
-  line-height: 1.6;
+    margin-bottom: 20px;
+    line-height: 1.6;
 }
 
 ul {
-  padding-left: 20px;
+    padding-left: 20px;
 }
 
-h2, p, ul {
-  color: rgb(217, 228, 238);
+section {
+    margin-bottom: 60px;
 }
 
-h3 {
-  color: rgb(109, 109, 223);
-  text-decoration: underline;
+
+h2, p, ul{
+    color: rgb(217, 228, 238);
+}
+
+h3{
+    color: rgb(109, 109, 223);
+    text-decoration: underline;
 }
 
 h1 {
-  color: rgb(0, 174, 255);
-  margin-top: 100px;
+    color: rgb(0, 174, 255);
+    margin-top: 100px;
 }
 
-h1:hover {
-  text-decoration: underline;
+h1:hover{
+    text-decoration: underline;
 }
 
-/* ========== IMAGE ========== */
-img {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 15px;
-  border: 4px solid rgb(45, 45, 167);
-  display: block;
-  margin: 0 auto;
+.part2 {
+    margin-left: 60px;
 }
 
-/* ========== CONTACT + ICONS ========== */
+
 .contact {
-  display: flex;
-  margin-bottom: 50px;
-  gap: 10px;
-  flex-wrap: wrap;
+    display: flex;
+    margin-bottom: 50px;
 }
+
+img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    border: 4px solid rgb(45, 45, 167);
+    display: block;
+    margin: 0 auto;
+}
+
+
+.sample {
+    color: rgb(184, 187, 196);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.sample:hover {
+    color:rgb(15, 163, 35);
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+}
+.contact i {
+  margin-left: 16px;
+  color: #089c6b;
+}
+
+#wa, .wa:hover{
+    color: rgb(0, 255, 85);
+}
+#email, .mail:hover{
+    color: white;
+}
+
+#ig, .ig:hover{
+    color: rgb(255, 123, 0);
+}
+
+.phone:hover {
+    color:  #089c6b
+}
+
+.phone, .ig, .mail, .wa{
+    color: rgb(147, 177, 243);
+}
+
+.footer {
+    margin-top: 50px;
+    text-align: center;
+    color: #c9c9d1;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-content, .part2 {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  p, li, h3 {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .contact {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  img {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
