@@ -5,6 +5,13 @@ body {
   padding: 20px;
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 60px;
+}
+
 .cta-button {
   background: #00aeff;
   color: white;
