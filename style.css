@@ -1,28 +1,32 @@
+
 body {
     background: #091924;
     display: flex;
     justify-content: center;
-}
-button {
-    background: rgb(0, 174, 255);
-    width: 200px;
-    height: 50px;
-    padding: 10px;
-    border-radius: 10px;
-    border-color: rgb(0, 174, 255);
     margin-top: 20px;
-    color: white;
-    font-size: medium;
-    font-weight: bold;
+}
+.cta-button {
+  background: #00aeff;
+  color: white;
+  padding: 14px 30px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 10px rgba(0, 174, 255, 0.3);
+  border: none;
 }
 
-button:hover {
-    cursor: pointer;
-    text-decoration: underline;
-    background: rgb(15, 163, 35);
-    border-color: rgb(210, 220, 224);
-    color: rgb(195, 214, 178);
+.cta-button:hover {
+  background: #00c957;
+  color: #eaffea;
+  box-shadow: 0 0 15px #00c957, 0 0 30px #00c957;
+  transform: scale(1.05);
 }
+
+
 
 h2, p, ul{
     color: rgb(217, 228, 238);
@@ -35,7 +39,11 @@ h3{
 
 h1 {
     color: rgb(0, 174, 255);
-    margin-top: 150px;
+    margin-top: 100px;
+}
+
+h1:hover{
+    text-decoration: underline;
 }
 
 .part2{
@@ -50,15 +58,25 @@ h1 {
 }
 
 img{
-    margin-left: 100px;
+    margin-left: 50px;
+    width: 400px;
+    border-radius: 15px;
+    border-color: rgb(45, 45, 167);
+    border-width: 4px;
+    border-style: solid;
 }
 
 .sample {
     color: rgb(184, 187, 196);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .sample:hover {
-    color:rgb(15, 163, 35)
+    color:rgb(15, 163, 35);
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
 }
 .contact i {
   margin-left: 16px;
@@ -72,10 +90,37 @@ img{
     color: white;
 }
 
-#ig, .ig:hover {
+#ig, .ig:hover{
     color: rgb(255, 123, 0);
 }
 
 .phone:hover {
     color:  #089c6b
+}
+
+.phone, .ig, .mail, .wa{
+    color: rgb(147, 177, 243);
+}
+
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+  }
+
+  .part2 {
+    margin-left: 0;
+    align-items: center;
+  }
+
+  .contact {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  img {
+    margin: 20px 0;
+    width: 90%;
+  }
 }
