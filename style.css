@@ -1,11 +1,23 @@
-
+/* ========== GLOBAL ========== */
 body {
-    background: #091924;
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    padding: 20px;
+  background: #091924;
+  margin: 0;
+  padding: 20px;
+  font-family: sans-serif;
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 60px;
+}
+
+.main-content, .part2 {
+  width: 45%;
+}
+
+/* ========== BUTTON ========== */
 .cta-button {
   background: #00aeff;
   color: white;
@@ -27,167 +39,48 @@ body {
   transform: scale(1.05);
 }
 
+/* ========== TEXT STYLES ========== */
 h1, h2, h3, p, ul {
-    margin-bottom: 20px;
-    line-height: 1.6;
+  margin-bottom: 20px;
+  line-height: 1.6;
 }
 
 ul {
-    padding-left: 20px;
+  padding-left: 20px;
 }
 
-section {
-    margin-bottom: 60px;
+h2, p, ul {
+  color: rgb(217, 228, 238);
 }
 
-
-h2, p, ul{
-    color: rgb(217, 228, 238);
-}
-
-h3{
-    color: rgb(109, 109, 223);
-    text-decoration: underline;
+h3 {
+  color: rgb(109, 109, 223);
+  text-decoration: underline;
 }
 
 h1 {
-    color: rgb(0, 174, 255);
-    margin-top: 100px;
+  color: rgb(0, 174, 255);
+  margin-top: 100px;
 }
 
-h1:hover{
-    text-decoration: underline;
+h1:hover {
+  text-decoration: underline;
 }
 
-.part2{
-    display: flex;
-    flex-direction: column;
-    margin-left: 100px;
+/* ========== IMAGE ========== */
+img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 15px;
+  border: 4px solid rgb(45, 45, 167);
+  display: block;
+  margin: 0 auto;
 }
 
+/* ========== CONTACT + ICONS ========== */
 .contact {
-    display: flex;
-    margin-bottom: 50px;
-}
-
-img{
-    margin-left: 50px;
-    width: 400px;
-    border-radius: 15px;
-    border-color: rgb(45, 45, 167);
-    border-width: 4px;
-    border-style: solid;
-}
-
-.sample {
-    color: rgb(184, 187, 196);
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-.sample:hover {
-    color:rgb(15, 163, 35);
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    text-decoration: none;
-}
-.contact i {
-  margin-left: 16px;
-  color: #089c6b;
-}
-
-#wa, .wa:hover{
-    color: rgb(0, 255, 85);
-}
-#email, .mail:hover{
-    color: white;
-}
-
-#ig, .ig:hover{
-    color: rgb(255, 123, 0);
-}
-
-.phone:hover {
-    color:  #089c6b
-}
-
-.phone, .ig, .mail, .wa{
-    color: rgb(147, 177, 243);
-}
-
-@media (max-width: 768px) {
-  body {
-    flex-direction: column;
-    align-items: center;
-    margin: 10px;
-  }
-
-  .part2 {
-    margin-left: 0;
-    align-items: center;
-  }
-
-  .contact {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  img {
-    margin: 20px 0;
-    width: 90%;
-  }
-}
-
-.footer {
-    margin-top: 50px;
-    text-align: center;
-    color: #c9c9d1;
-    font-size: 17px;
-    font-weight: bold;
-}
-
-@media screen and (max-width: 768px) {
-  .part2 {
-    flex-direction: column;
-    margin-left: 0;
-    align-items: center;
-  }
-
-  img {
-    width: 90%;
-    margin-left: 0;
-    margin-top: 20px;
-  }
-
-  body {
-    flex-direction: column;
-    align-items: center;
-    overflow-x: hidden;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .part2 {
-    display: block; /* disables the flex */
-    margin-left: 0;
-    margin-top: 30px;
-  }
-
-  .contact {
-    display: block; /* stack contact links vertically */
-    text-align: center;
-    margin-bottom: 30px;
-  }
-
-  img {
-    width: 90%;
-    margin: 0 auto;
-    display: block;
-    margin-bottom: 30px;
-  }
-
-  body {
-    flex-direction: column;
-    overflow-x: hidden;
-  }
+  display: flex;
+  margin-bottom: 50px;
+  gap: 10px;
+  flex-wrap: wrap;
 }
