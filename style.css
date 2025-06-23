@@ -86,8 +86,8 @@ h1:hover {
 #ig, .ig:hover { color: rgb(255, 123, 0); }
 .phone, .ig, .mail, .wa { color: rgb(147, 177, 243); }
 
-img {
-    width: 100%;
+.me-img {
+    width: 70%;
     max-width: 400px;
     border-radius: 15px;
     border: 4px solid rgb(45, 45, 167);
@@ -116,6 +116,11 @@ img {
     text-decoration: none;
 }
 
+.aur-img{
+    margin-top: 25px;
+}
+
+
 @media screen and (max-width: 768px) {
     body {
         flex-direction: column;
@@ -139,8 +144,8 @@ img {
         text-align: center;
     }
 
-    img {
-        margin-top: 20px;
+    .me-img {
+        margin-top: 5px;
     }
 
     h1 {
