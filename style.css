@@ -17,14 +17,16 @@ body {
 .title-mir{
     color: rgb(236, 232, 230);
     font-size: 18px;
-    margin-bottom: 6px;
+    margin-top: 40px;
+    margin-bottom: 0;
 }
 
 .title-aur{
     color: rgb(236, 232, 230);
     font-size: 18px;
-    margin-top: 40px;
-    margin-bottom: 0;
+    
+    
+    margin-bottom: 6px;
 }
 
 .cta-button {
