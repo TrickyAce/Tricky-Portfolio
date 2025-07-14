@@ -14,8 +14,8 @@ body{font-family:'Inter',sans-serif;background:#090d14;color:#e9eef3;line-height
 }
 
 /* ===== NAV ===== */
-.nav{position:fixed;top:0;z-index:999;background:rgba(9,13,20,.8);backdrop-filter:blur(8px);display:flex;justify-content:center; animation:navFade 0.8s ease-out both;  }
-.logo{font-size:1.5rem;font-weight:700;padding:.8rem 1rem;color:var(--primary)}
+.nav{position:fixed;top:0;z-index:999;background:rgba(9,13,20,.8);backdrop-filter:blur(8px);display:flex;justify-content:center; animation:navFade 0.8s ease-out both; width: 100%; }
+.logo{font-size:1.5rem;font-weight:700;padding:1.1rem 1rem;color:var(--primary)}
 .logo span{color:var(--accent)}
 .nav-links{display:flex;list-style:none;padding:.8rem 1rem;gap:1.4rem}
 .nav-links a{color:var(--muted);text-decoration:none;font-size:.9rem;}
@@ -147,7 +147,7 @@ html, body {
   justify-content: center;
   gap: .5rem;
   padding: .8rem 1rem;
-  margin-top: 9px;
+  margin-top: 13px;
   margin-left: 10px;
 }
 
