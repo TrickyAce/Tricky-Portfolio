@@ -1,7 +1,7 @@
 ---
 name: Ada O.
 quote: Sales jumped 32% the first week, site loads before my coffee does.
-image: /images/uploads/1005489436.jpg
+image: /images/uploads/1005489437.jpg
 order: 1
 ---
 \`\`\`
