@@ -1,85 +1,29 @@
+// Simple content loader that works with static files
 class ContentLoader {
   constructor() {
     this.projects = []
     this.testimonials = []
-    this.settings = {}
     this.chatTestimonials = []
+    this.settings = {}
   }
 
   async init() {
-    try {
-      await Promise.all([
-        this.loadProjects(),
-        this.loadTestimonials(),
-        this.loadSettings(),
-        this.loadChatTestimonials(),
-      ])
-
-      this.renderProjects()
-      this.renderTestimonials()
-      this.renderChatTestimonials()
-      this.renderAbout()
-      this.renderContact()
-    } catch (error) {
-      console.error("Error loading content:", error)
-      // Fallback to existing static content if dynamic loading fails
-    }
+    // Load content and render immediately
+    this.loadStaticContent()
+    this.renderProjects()
+    this.renderTestimonials()
+    this.renderChatTestimonials()
+    this.renderAbout()
+    this.renderContact()
   }
 
-  // Helper function to parse frontmatter
-  parseFrontmatter(content) {
-    const frontmatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/
-    const match = content.match(frontmatterRegex)
-
-    if (!match) return { data: {}, content: content }
-
-    const frontmatter = match[1]
-    const body = match[2]
-    const data = {}
-
-    frontmatter.split("\n").forEach((line) => {
-      const colonIndex = line.indexOf(":")
-      if (colonIndex > -1) {
-        const key = line.substring(0, colonIndex).trim()
-        let value = line.substring(colonIndex + 1).trim()
-
-        // Remove quotes
-        if ((value.startsWith('"') && value.endsWith('"')) || (value.startsWith("'") && value.endsWith("'"))) {
-          value = value.slice(1, -1)
-        }
-
-        // Convert boolean strings
-        if (value === "true") value = true
-        if (value === "false") value = false
-
-        // Convert numbers
-        if (!isNaN(value) && value !== "") value = Number(value)
-
-        data[key] = value
-      }
-    })
-
-    return { data, content: body }
-  }
-
-  async loadProjects() {
-    try {
-      // Try to load from API first (for Netlify CMS)
-      const response = await fetch("/.netlify/functions/get-content?type=projects")
-      if (response.ok) {
-        this.projects = await response.json()
-        return
-      }
-    } catch (error) {
-      console.log("API not available, using fallback data")
-    }
-
-    // Fallback data
+  loadStaticContent() {
+    // Projects data (you can update this via CMS later)
     this.projects = [
       {
         title: "Delolas Closet",
         description: "Dynamic clothing store demo",
-        image: "delola.webp",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Delola-3MdUdpXOPOmhTzpq2FCsiuI1IJlsPV.webp", // Using the provided image
         url: "https://delolasclosetdemo.netlify.app/",
         featured: true,
         order: 1,
@@ -87,26 +31,14 @@ class ContentLoader {
       {
         title: "HairDo Mirab",
         description: "One‑page e‑commerce demo",
-        image: "mirab.webp",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/mirab-2uJywicxplaMnRIPlzMuaczNiLBlWF.webp", // Using the provided image
         url: "https://hairdomirabdemo.netlify.app/",
         featured: true,
         order: 2,
       },
     ]
-  }
 
-  async loadTestimonials() {
-    try {
-      const response = await fetch("/.netlify/functions/get-content?type=testimonials")
-      if (response.ok) {
-        this.testimonials = await response.json()
-        return
-      }
-    } catch (error) {
-      console.log("API not available, using fallback data")
-    }
-
-    // Fallback data
+    // Testimonials data
     this.testimonials = [
       {
         name: "Ada O.",
@@ -124,40 +56,16 @@ class ContentLoader {
         order: 3,
       },
     ]
-  }
 
-  async loadChatTestimonials() {
-    try {
-      const response = await fetch("/.netlify/functions/get-content?type=chat-testimonials")
-      if (response.ok) {
-        this.chatTestimonials = await response.json()
-        return
-      }
-    } catch (error) {
-      console.log("API not available, using fallback data")
-    }
-
-    // Fallback - empty for now
+    // Chat testimonials (empty for now - you can add via CMS)
     this.chatTestimonials = []
-  }
 
-  async loadSettings() {
-    try {
-      const response = await fetch("/.netlify/functions/get-content?type=settings")
-      if (response.ok) {
-        this.settings = await response.json()
-        return
-      }
-    } catch (error) {
-      console.log("API not available, using fallback data")
-    }
-
-    // Fallback data
+    // Settings
     this.settings = {
       about: {
         bio1: "🇳🇬 Ogbomosho‑based front‑end dev, taekwondo athlete, pixel‑perfectionist.",
         bio2: "I combine athlete discipline with design thinking to ship projects that punch above their weight.",
-        image: "tricky.webp",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/tricky-Fhwk7jwqsyqknpgNh2F2lVKTSI1Qeq.webp", // Using the provided image
         tech: ["HTML & CSS", "JavaScript ES6+", "Tailwind / Vanilla", "Netlify & Vercel"],
       },
       contact: {
@@ -170,16 +78,15 @@ class ContentLoader {
 
   renderProjects() {
     const container = document.querySelector(".cards")
-    if (!container || !this.projects.length) return
+    if (!container) return
 
-    // Sort by order and filter featured
-    const featuredProjects = this.projects.filter((project) => project.featured).sort((a, b) => a.order - b.order)
+    const featuredProjects = this.projects.filter((p) => p.featured).sort((a, b) => a.order - b.order)
 
     container.innerHTML = featuredProjects
       .map(
         (project) => `
       <article class="card reveal">
-        <img src="${project.image}" alt="${project.title} – screenshot">
+        <img src="${project.image}" alt="${project.title} – screenshot" loading="lazy">
         <div class="card-info">
           <h3>${project.title}</h3>
           <p class="small">${project.description}</p>
@@ -190,48 +97,45 @@ class ContentLoader {
       )
       .join("")
 
-    // Re-initialize scroll reveal for new elements
     this.initScrollReveal()
   }
 
   renderTestimonials() {
     const container = document.querySelector(".slider")
-    if (!container || !this.testimonials.length) return
+    if (!container) return
 
-    // Sort by order
     const sortedTestimonials = this.testimonials.sort((a, b) => a.order - b.order)
 
     container.innerHTML = sortedTestimonials
       .map(
         (testimonial, index) => `
-    <div class="slide ${index === 0 ? "current" : ""}">
-      ${
-        testimonial.image
-          ? `
-        <div class="testimonial-image">
-          <img src="${testimonial.image}" alt="${testimonial.name}" />
-        </div>
-      `
-          : ""
-      }
-      <blockquote>"${testimonial.quote}"</blockquote>
-      <span>— ${testimonial.name}</span>
-    </div>
-  `,
+      <div class="slide ${index === 0 ? "current" : ""}">
+        ${
+          testimonial.image
+            ? `
+          <div class="testimonial-image">
+            <img src="${testimonial.image}" alt="${testimonial.name}" loading="lazy" />
+          </div>
+        `
+            : ""
+        }
+        <blockquote>"${testimonial.quote}"</blockquote>
+        <span>— ${testimonial.name}</span>
+      </div>
+    `,
       )
       .join("")
 
-    // Re-initialize slider
     this.initSlider()
   }
 
   renderChatTestimonials() {
     const container = document.querySelector(".chat-testimonials-grid")
+    const section = document.querySelector("#chat-testimonials")
+
     if (!container) return
 
-    // Hide section if no chat testimonials
-    const section = document.querySelector("#chat-testimonials")
-    if (!this.chatTestimonials.length) {
+    if (this.chatTestimonials.length === 0) {
       if (section) section.style.display = "none"
       return
     }
@@ -248,7 +152,7 @@ class ContentLoader {
           <h4>${item.title}</h4>
           <span class="project-type">${item.project_type}</span>
         </div>
-        <img src="${item.image}" alt="Chat with ${item.client}" />
+        <img src="${item.image}" alt="Chat with ${item.client}" loading="lazy" />
         <p class="client-name">— ${item.client}</p>
       </div>
     `,
@@ -265,7 +169,7 @@ class ContentLoader {
     const { bio1, bio2, image, tech } = this.settings.about
 
     aboutSection.innerHTML = `
-      <img src="${image}" alt="Portrait of Tricky Ace">
+      <img src="${image}" alt="Portrait of Tricky Ace" loading="lazy">
       <div>
         <p>${bio1}</p>
         <p>${bio2}</p>
@@ -329,7 +233,7 @@ class ContentLoader {
   }
 }
 
-// Initialize content loader when DOM is ready
+// Initialize when DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
   const contentLoader = new ContentLoader()
   contentLoader.init()
