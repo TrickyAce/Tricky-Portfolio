@@ -1,7 +1,7 @@
 ---
 whatsapp: "2347080428566"
 email: trickyacemagic@gmail.com
-title: Contact Me Now
+title: Contact test
 ---
 \`\`\`
 
