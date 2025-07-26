@@ -3,14 +3,14 @@
 <head>
   <!-- ========== SEO META ========== -->
   <meta charset="UTF-8">
-  <title>Tricky Ace — Front‑End Developer & Web Designer</title>
+  <title>Tricky Ace — Front‑End Developer & Web Designer</title>
   <meta name="description" content="I design & build lightning‑fast, conversion‑ready websites and one‑page stores for hustlers, creatives, and businesses.">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="canonical" href="https://trickyace-portfolio.netlify.app/">
 
   <!-- Open‑Graph / Twitter -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Tricky Ace — Web Designer">
+  <meta property="og:title" content="Tricky Ace — Web Designer">
   <meta property="og:description" content="Landing pages & one‑page stores that convert.">
   <meta property="og:image" content="images/og-cover.webp">
   <meta property="og:url" content="https://trickyace-portfolio.netlify.app/">
@@ -20,13 +20,16 @@
   <meta name="theme-color" content="#090d14">
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 
-  <!-- Font (1 request) -->
+  <!-- Font (1 request) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="style.css">
+  
+  <!-- Netlify Identity Widget -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 
@@ -48,14 +51,14 @@
     <p class="hero-tag">I design & code ultra‑fast sites that turn visitors into buyers.</p>
     <a href="https://wa.me/2347080428566" class="btn-primary">
       <svg viewBox="0 0 24 24"><path d="M20 2H4a2 2 0 0 0-2 2v16l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z" fill="currentColor"/></svg>
-      Start a Chat
+      Start a Chat
     </a>
   </div>
 </header>
 
 <!-- ===== SERVICES ===== -->
 <section id="services" class="section">
-  <h2 class="section-title">What I Do</h2>
+  <h2 class="section-title">What I Do</h2>
   <div class="grid3 reveal">
     <article class="service">
       <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="4" rx="1"/><rect x="3" y="10" width="18" height="10" rx="1"/></svg>
@@ -70,17 +73,18 @@
     <article class="service">
       <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none"/><path d="M8 12h8" stroke-width="2"/></svg>
       <h3>One‑Page Stores</h3>
-      <p>Sell a product with Paystack / Stripe & ship same day.</p>
+      <p>Sell a product with Paystack / Stripe & ship same day.</p>
     </article>
   </div>
 </section>
 
 <!-- ===== WORK ===== -->
 <section id="work" class="section dark">
-  <h2 class="section-title">Featured Work</h2>
+  <h2 class="section-title">Featured Work</h2>
   <div class="cards">
+    <!-- Dynamic content will be loaded here -->
     <article class="card reveal">
-      <img src="delola.webp" alt="Delolas Closet – screenshot">
+      <img src="delola.webp" alt="Delolas Closet – screenshot">
       <div class="card-info">
         <h3>Delolas Closet</h3>
         <p class="small">Dynamic clothing store demo</p>
@@ -89,7 +93,7 @@
     </article>
 
     <article class="card reveal">
-      <img src="mirab.webp" alt="HairDo Mirab – screenshot">
+      <img src="mirab.webp" alt="HairDo Mirab – screenshot">
       <div class="card-info">
         <h3>HairDo Mirab</h3>
         <p class="small">One‑page e‑commerce demo</p>
@@ -101,14 +105,15 @@
 
 <!-- ===== ABOUT ===== -->
 <section id="about" class="section">
-  <h2 class="section-title">About Me</h2>
+  <h2 class="section-title">About Me</h2>
   <div class="about-wrapper reveal">
+    <!-- Dynamic content will be loaded here -->
     <img src="tricky.webp" alt="Portrait of Tricky Ace">
     <div>
       <p>🇳🇬 Ogbomosho‑based front‑end dev, taekwondo athlete, pixel‑perfectionist.</p>
       <p>I combine athlete discipline with design thinking to ship projects that punch above their weight.</p>
       <ul class="tech">
-        <li>HTML & CSS</li><li>JavaScript ES6+</li><li>Tailwind / Vanilla</li><li>Netlify & Vercel</li>
+        <li>HTML & CSS</li><li>JavaScript ES6+</li><li>Tailwind / Vanilla</li><li>Netlify & Vercel</li>
       </ul>
     </div>
   </div>
@@ -116,40 +121,50 @@
 
 <!-- ===== TESTIMONIALS ===== -->
 <section id="testimonials" class="section dark">
-  <h2 class="section-title">Client Love</h2>
+  <h2 class="section-title">Client Love</h2>
   <div class="slider">
+    <!-- Dynamic content will be loaded here -->
     <div class="slide current">
-      <blockquote>“Sales jumped 32 % the first week—site loads before my coffee does.”</blockquote>
-      <span>— Ada O.</span>
+      <blockquote>"Sales jumped 32% the first week—site loads before my coffee does."</blockquote>
+      <span>— Ada O.</span>
     </div>
     <div class="slide">
-      <blockquote>“Looked global from day one. Customers thought we were a huge brand.”</blockquote>
-      <span>— Tosin A.</span>
+      <blockquote>"Looked global from day one. Customers thought we were a huge brand."</blockquote>
+      <span>— Tosin A.</span>
     </div>
     <div class="slide">
-      <blockquote>“99 Lighthouse on mobile? Yes please.”</blockquote>
-      <span>— Chiamaka E.</span>
+      <blockquote>"99 Lighthouse on mobile? Yes please."</blockquote>
+      <span>— Chiamaka E.</span>
     </div>
+  </div>
+</section>
+
+<!-- ===== CHAT TESTIMONIALS ===== -->
+<section id="chat-testimonials" class="section">
+  <h2 class="section-title">Real Client Reactions</h2>
+  <div class="chat-testimonials-grid">
+    <!-- Dynamic chat screenshots will load here -->
   </div>
 </section>
 
 <!-- ===== CONTACT ===== -->
 <section id="contact" class="section contact">
-  <h2 class="section-title">Let’s Work</h2>
+  <h2 class="section-title">Let's Work</h2>
   <a href="https://wa.me/2347080428566" class="btn-primary big">
     <svg viewBox="0 0 24 24"><path d="M20 2H4a2 2 0 0 0-2 2v16l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z" fill="currentColor"/></svg>
-    Chat on WhatsApp
+    Chat on WhatsApp
   </a>
   <p class="small alt">or <a href="mailto:trickyacemagic@gmail.com">trickyacemagic@gmail.com</a></p>
 </section>
 
 <!-- ===== FOOTER ===== -->
 <footer>
-  <p>© 2025 Tricky Ace &middot; Hand‑coded with ❤️ & caffeine.</p>
+  <p>© 2025 Tricky Ace &middot; Hand‑coded with ❤️ & caffeine.</p>
 </footer>
 
 <button id="toTop" aria-label="Back to top">↑</button>
-<!-- ===== STRUCTURED DATA ===== -->
+
+<!-- ===== STRUCTURED DATA ===== -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -164,7 +179,10 @@
 }
 </script>
 
-<!-- ===== 3 KB JS (scroll‑reveal & slider) ===== -->
+<!-- ===== CONTENT LOADER ===== -->
+<script src="js/content-loader.js"></script>
+
+<!-- ===== ORIGINAL JS (scroll‑reveal & slider) ===== -->
 <script>
 /* Scroll reveal */
 const io=new IntersectionObserver(e=>e.forEach(x=>{
@@ -176,9 +194,11 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 let i=0;
 setInterval(()=>{
   const slides=document.querySelectorAll('.slide');
-  slides[i].classList.remove('current');
-  i=(i+1)%slides.length;
-  slides[i].classList.add('current');
+  if(slides.length > 0) {
+    slides[i].classList.remove('current');
+    i=(i+1)%slides.length;
+    slides[i].classList.add('current');
+  }
 },5000);
 
 /* Back‑to‑top visibility + smooth scroll */
@@ -186,6 +206,17 @@ const toTop=document.getElementById('toTop');
 window.addEventListener('scroll',()=>window.scrollY>400?
   toTop.classList.add('show'):toTop.classList.remove('show'));
 toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+/* Netlify Identity */
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on("init", user => {
+    if (!user) {
+      window.netlifyIdentity.on("login", () => {
+        document.location.href = "/admin/";
+      });
+    }
+  });
+}
 </script>
 </body>
 </html>

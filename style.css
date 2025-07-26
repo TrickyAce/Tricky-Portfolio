@@ -188,3 +188,101 @@ html, body {
     font-size: .68rem;
   }
 }
+
+/* ===== TESTIMONIAL IMAGES ===== */
+.testimonial-image {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-image img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--primary);
+  box-shadow: 0 4px 12px rgba(0, 214, 255, 0.3);
+}
+
+/* Responsive testimonial layout */
+@media (min-width: 600px) {
+  .testimonial-image img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* ===== CHAT TESTIMONIALS ===== */
+.chat-testimonials-grid {
+  display: grid;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.chat-testimonial {
+  background: #0e141d;
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: .6s;
+}
+
+.chat-testimonial.show {
+  opacity: 1;
+  transform: none;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chat-header h4 {
+  color: var(--primary);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.project-type {
+  background: var(--accent);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.chat-testimonial img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.client-name {
+  color: var(--muted);
+  font-style: italic;
+  margin: 0;
+}
+
+@media (min-width: 700px) {
+  .chat-testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .chat-testimonials-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
