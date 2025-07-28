@@ -108,10 +108,10 @@
   <h2 class="section-title">About Me</h2>
   <div class="about-wrapper reveal">
     <!-- Dynamic content will be loaded here -->
-    <img src="tricky.webp" alt="Portrait of Tricky Ace">
+    <img id="about-img" src="tricky.webp" alt="Portrait of Tricky Ace">
     <div>
-      <p>🇳🇬 Ogbomosho‑based front‑end dev, taekwondo athlete, pixel‑perfectionist.</p>
-      <p>I combine athlete discipline with design thinking to ship projects that punch above their weight.</p>
+      <p id="para1">🇳🇬 Ogbomosho‑based front‑end dev, taekwondo athlete, pixel‑perfectionist.</p>
+      <p id="para2">I combine athlete discipline with design thinking to ship projects that punch above their weight.</p>
       <ul class="tech">
         <li>HTML & CSS</li><li>JavaScript ES6+</li><li>Tailwind / Vanilla</li><li>Netlify & Vercel</li>
       </ul>
@@ -123,7 +123,6 @@
 <section id="testimonials" class="section dark">
   <h2 class="section-title">Client Love</h2>
   <div class="slider">
-    <!-- Dynamic content will be loaded here -->
     <div class="slide current">
       <blockquote>"Sales jumped 32% the first week—site loads before my coffee does."</blockquote>
       <span>— Ada O.</span>
@@ -143,7 +142,6 @@
 <section id="chat-testimonials" class="section">
   <h2 class="section-title">Client Reaction</h2>
   <div class="chat-testimonials-grid">
-    <!-- Dynamic chat screenshots will load here -->
   </div>
 </section>
 
@@ -163,25 +161,6 @@
 </footer>
 
 <button id="toTop" aria-label="Back to top">↑</button>
-
-<!-- ===== STRUCTURED DATA ===== -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Tricky Ace",
-  "url": "https://trickyace-portfolio.netlify.app",
-  "jobTitle": "Front-End Developer & Web Designer",
-  "sameAs": [
-    "https://instagram.com/trickyace.tkd",
-    "https://wa.me/2347080428566"
-  ]
-}
-</script>
-
-<!-- ===== CONTENT LOADER ===== -->
-<script src="js/content-loader.js"></script>
-
 <!-- ===== ORIGINAL JS (scroll‑reveal & slider) ===== -->
 <script>
 /* Scroll reveal */
@@ -206,17 +185,10 @@ const toTop=document.getElementById('toTop');
 window.addEventListener('scroll',()=>window.scrollY>400?
   toTop.classList.add('show'):toTop.classList.remove('show'));
 toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
-
-/* Netlify Identity */
-if (window.netlifyIdentity) {
-  window.netlifyIdentity.on("init", user => {
-    if (!user) {
-      window.netlifyIdentity.on("login", () => {
-        document.location.href = "/admin/";
-      });
-    }
-  });
-}
 </script>
+<!-- At the bottom of index.html -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+<script src="/inject.js"></script>
+
 </body>
 </html>
