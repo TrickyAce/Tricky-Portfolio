@@ -173,6 +173,19 @@
     }
   }, 5000);
 
+
+  const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+
   // === Back-to-top button ===
   const toTop = document.getElementById('toTop');
   window.addEventListener('scroll', () => {
