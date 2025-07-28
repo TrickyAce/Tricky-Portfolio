@@ -82,36 +82,19 @@
 <section id="work" class="section dark">
   <h2 class="section-title">Featured Work</h2>
   <div class="cards">
-    <!-- Dynamic content will be loaded here -->
-    <article class="card reveal">
-      <img src="delola.webp" alt="Delolas Closet – screenshot">
-      <div class="card-info">
-        <h3>Delolas Closet</h3>
-        <p class="small">Dynamic clothing store demo</p>
-        <a href="https://delolasclosetdemo.netlify.app/" target="_blank" class="btn-text">Visit →</a>
-      </div>
-    </article>
-
-    <article class="card reveal">
-      <img src="mirab.webp" alt="HairDo Mirab – screenshot">
-      <div class="card-info">
-        <h3>HairDo Mirab</h3>
-        <p class="small">One‑page e‑commerce demo</p>
-        <a href="https://hairdomirabdemo.netlify.app/" target="_blank" class="btn-text">Visit →</a>
-      </div>
-    </article>
+    <!-- Cards will be injected here by JS -->
   </div>
 </section>
+
 
 <!-- ===== ABOUT ===== -->
 <section id="about" class="section">
   <h2 class="section-title">About Me</h2>
   <div class="about-wrapper reveal">
-    <!-- Dynamic content will be loaded here -->
-    <img id="about-img" src="tricky.webp" alt="Portrait of Tricky Ace">
+    <img id="about-img" src="" alt="Portrait of Tricky Ace">
     <div>
-      <p id="para1">🇳🇬 Ogbomosho‑based front‑end dev, taekwondo athlete, pixel‑perfectionist.</p>
-      <p id="para2">I combine athlete discipline with design thinking to ship projects that punch above their weight.</p>
+      <p id="para1"></p>
+      <p id="para2"></p>
       <ul class="tech">
         <li>HTML & CSS</li><li>JavaScript ES6+</li><li>Tailwind / Vanilla</li><li>Netlify & Vercel</li>
       </ul>
@@ -119,31 +102,24 @@
   </div>
 </section>
 
+
 <!-- ===== TESTIMONIALS ===== -->
 <section id="testimonials" class="section dark">
   <h2 class="section-title">Client Love</h2>
   <div class="slider">
-    <div class="slide current">
-      <blockquote>"Sales jumped 32% the first week—site loads before my coffee does."</blockquote>
-      <span>— Ada O.</span>
-    </div>
-    <div class="slide">
-      <blockquote>"Looked global from day one. Customers thought we were a huge brand."</blockquote>
-      <span>— Tosin A.</span>
-    </div>
-    <div class="slide">
-      <blockquote>"99 Lighthouse on mobile? Yes please."</blockquote>
-      <span>— Chiamaka E.</span>
-    </div>
+    <!-- Testimonials will be injected here by JS -->
   </div>
 </section>
+
 
 <!-- ===== CHAT TESTIMONIALS ===== -->
 <section id="chat-testimonials" class="section">
   <h2 class="section-title">Client Reaction</h2>
   <div class="chat-testimonials-grid">
+    <!-- Reactions will be injected here by JS -->
   </div>
 </section>
+
 
 <!-- ===== CONTACT ===== -->
 <section id="contact" class="section contact">
@@ -189,6 +165,5 @@ toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 <!-- At the bottom of index.html -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
 <script src="/inject.js"></script>
-
 </body>
 </html>
