@@ -40,11 +40,11 @@ collections:
       - file: "testimonials.json"
         label: "Client Testimonials"
         name: "testimonials"
+        delete: true
         fields:
           - label: "Testimonials"
             name: "testimonials"
             widget: "list"
-            delete: true
             fields:
               - { label: "Quote", name: "quote", widget: "text" }
               - { label: "Name", name: "name", widget: "string" }
