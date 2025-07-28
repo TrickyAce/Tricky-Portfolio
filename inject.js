@@ -66,11 +66,14 @@ fetch('reactions.json')
     grid.innerHTML = '';
     data.reactions.forEach(item => {
       const div = document.createElement('div');
-      div.className = 'chat-bubble';
+      div.className = 'chat-bubble show';
       div.innerHTML = `
         <img src="${item.image}" alt="Client reaction">
         <p>${item.text}</p>
       `;
       grid.appendChild(div);
+      observer.observe(div); // observe new element
     });
   });
+
+
