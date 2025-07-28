@@ -19,6 +19,7 @@ collections:
 
   - name: "featured"
     label: "Featured Work"
+    delete: true
     files:
       - file: "featured.json"
         label: "Featured Projects"
@@ -35,6 +36,7 @@ collections:
 
   - name: "testimonials"
     label: "Client Love"
+    delete: true
     files:
       - file: "testimonials.json"
         label: "Client Testimonials"
@@ -49,6 +51,7 @@ collections:
 
   - name: "reactions"
     label: "Client Reactions"
+    delete: true
     files:
       - file: "reactions.json"
         label: "Client Reactions"
