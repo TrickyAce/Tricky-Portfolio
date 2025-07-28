@@ -19,7 +19,6 @@ collections:
 
   - name: "featured"
     label: "Featured Work"
-    delete: true
     files:
       - file: "featured.json"
         label: "Featured Projects"
@@ -47,11 +46,9 @@ collections:
             fields:
               - { label: "Quote", name: "quote", widget: "text" }
               - { label: "Name", name: "name", widget: "string" }
-            delete: true
 
   - name: "reactions"
     label: "Client Reactions"
-    delete: true
     files:
       - file: "reactions.json"
         label: "Client Reactions"
