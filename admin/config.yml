@@ -27,7 +27,6 @@ collections:
           - label: "Projects"
             name: "projects"
             widget: "list"
-            delete: true
             fields:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Description", name: "description", widget: "string" }
