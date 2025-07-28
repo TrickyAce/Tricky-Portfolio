@@ -2,35 +2,38 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "assets/img"
-public_folder: "/assets/img"
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
 
 collections:
   - name: "about"
     label: "About Me"
     files:
-      - file: "content/about.yml"
-        label: "About Section"
+      - file: "about.json"
+        label: "About Content"
         name: "about"
         fields:
           - { label: "Image", name: "image", widget: "image" }
           - { label: "Paragraph 1", name: "para1", widget: "text" }
           - { label: "Paragraph 2", name: "para2", widget: "text" }
 
-  - name: "work"
+  - name: "featured"
     label: "Featured Work"
-    folder: "content/work"
-    create: true
-    slug: "{{slug}}"
+    label_singular: "Work"
+    file: "featured.json"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "text" }
-      - { label: "Image", name: "image", widget: "image" }
-      - { label: "URL", name: "url", widget: "string" }
+      - label: "Projects"
+        name: "projects"
+        widget: "list"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - { label: "Image", name: "image", widget: "image" }
+          - { label: "Link", name: "link", widget: "string" }
 
   - name: "testimonials"
-    label: "Testimonials"
-    file: "content/testimonials.yml"
+    label: "Client Love"
+    file: "testimonials.json"
     fields:
       - label: "Testimonials"
         name: "testimonials"
@@ -41,11 +44,11 @@ collections:
 
   - name: "reactions"
     label: "Client Reactions"
-    file: "content/reactions.yml"
+    file: "reactions.json"
     fields:
       - label: "Reactions"
         name: "reactions"
         widget: "list"
         fields:
           - { label: "Image", name: "image", widget: "image" }
-          - { label: "Reaction", name: "reaction", widget: "string" }
+          - { label: "Text", name: "text", widget: "string" }
