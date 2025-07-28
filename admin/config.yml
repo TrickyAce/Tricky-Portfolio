@@ -40,7 +40,6 @@ collections:
       - file: "testimonials.json"
         label: "Client Testimonials"
         name: "testimonials"
-        delete: true
         fields:
           - label: "Testimonials"
             name: "testimonials"
@@ -48,6 +47,7 @@ collections:
             fields:
               - { label: "Quote", name: "quote", widget: "text" }
               - { label: "Name", name: "name", widget: "string" }
+            delete: true
 
   - name: "reactions"
     label: "Client Reactions"
