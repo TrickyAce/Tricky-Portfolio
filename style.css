@@ -224,11 +224,11 @@ html, body {
 
 /* Main chat reaction box */
 .chat-bubble {
-  background: #fff;
+  background: #9b3ca3;
   border-radius: 1rem;
   box-shadow: 0 4px 20px rgba(0,0,0,0.05);
   overflow: hidden;
-  padding: 1rem;
+  padding: 7px;
   position: relative;
   transition: transform 0.4s ease, opacity 0.4s ease;
   opacity: 1;
@@ -244,8 +244,8 @@ html, body {
 
 /* Chat bubble text */
 .chat-bubble p {
-  font-size: 0.95rem;
-  color: #333;
+  font-size: 20px;
+  color: #e7dbdb;
   margin: 0;
   line-height: 1.5;
 }
