@@ -137,10 +137,11 @@
 </footer>
 
 <button id="toTop" aria-label="Back to top">↑</button>
-<!-- ===== ORIGINAL JS (scroll‑reveal & slider) ===== -->
-<script type="module">
-  import { injectFeaturedWork } from './js/inject.js';
-
+<!-- At the bottom of index.html -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+<script src="/inject.js"></script>
+<script src="js/inject.js"></script>
+<script>
   // === Scroll reveal observer ===
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -151,17 +152,17 @@
     });
   }, { threshold: 0.2 });
 
-  // Make this available globally
-  window.observeReveals = function () {
+  // Make reveal observer accessible
+  function observeReveals() {
     document.querySelectorAll('.reveal:not(.show)').forEach(el => io.observe(el));
-  };
+  }
 
-  // Inject featured projects and observe scroll
+  // === Call card injection after DOM is ready ===
   document.addEventListener('DOMContentLoaded', () => {
     injectFeaturedWork();
   });
 
-  // === Slider logic ===
+  // === Slider ===
   let i = 0;
   setInterval(() => {
     const slides = document.querySelectorAll('.slide');
@@ -182,8 +183,5 @@
   });
 </script>
 
-<!-- At the bottom of index.html -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
-<script src="/inject.js"></script>
 </body>
 </html>

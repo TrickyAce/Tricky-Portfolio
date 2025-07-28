@@ -8,7 +8,7 @@ fetch('about.json')
   });
 
 /* === Inject cards into #work .cards === */
-export function injectFeaturedWork() {
+function injectFeaturedWork() {
   fetch('featured.json')
     .then(res => res.json())
     .then(data => {
@@ -29,10 +29,15 @@ export function injectFeaturedWork() {
         container.appendChild(card);
       });
 
-      // Observe newly added .reveal cards
-      observeReveals(); // This function comes from main script
+      // Trigger scroll reveal on newly added cards
+      if (typeof observeReveals === 'function') {
+        observeReveals();
+      }
     });
 }
+
+// Expose it globally
+window.injectFeaturedWork = injectFeaturedWork;
 
 
 
