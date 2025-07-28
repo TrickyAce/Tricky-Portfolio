@@ -28,6 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
         container.appendChild(card);
       });
+      // Trigger the scroll event so the new .reveal elements get the .show class
+      window.dispatchEvent(new Event('scroll'));
     });
 });
 
