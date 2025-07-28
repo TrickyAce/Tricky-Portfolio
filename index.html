@@ -138,30 +138,50 @@
 
 <button id="toTop" aria-label="Back to top">↑</button>
 <!-- ===== ORIGINAL JS (scroll‑reveal & slider) ===== -->
-<script>
-/* Scroll reveal */
-const io=new IntersectionObserver(e=>e.forEach(x=>{
-  if(x.isIntersecting){x.target.classList.add('show');io.unobserve(x.target)}
-}),{threshold:.2});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+<script type="module">
+  import { injectFeaturedWork } from './js/inject.js';
 
-/* Slider */
-let i=0;
-setInterval(()=>{
-  const slides=document.querySelectorAll('.slide');
-  if(slides.length > 0) {
-    slides[i].classList.remove('current');
-    i=(i+1)%slides.length;
-    slides[i].classList.add('current');
-  }
-},5000);
+  // === Scroll reveal observer ===
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
 
-/* Back‑to‑top visibility + smooth scroll */
-const toTop=document.getElementById('toTop');
-window.addEventListener('scroll',()=>window.scrollY>400?
-  toTop.classList.add('show'):toTop.classList.remove('show'));
-toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  // Make this available globally
+  window.observeReveals = function () {
+    document.querySelectorAll('.reveal:not(.show)').forEach(el => io.observe(el));
+  };
+
+  // Inject featured projects and observe scroll
+  document.addEventListener('DOMContentLoaded', () => {
+    injectFeaturedWork();
+  });
+
+  // === Slider logic ===
+  let i = 0;
+  setInterval(() => {
+    const slides = document.querySelectorAll('.slide');
+    if (slides.length > 0) {
+      slides[i].classList.remove('current');
+      i = (i + 1) % slides.length;
+      slides[i].classList.add('current');
+    }
+  }, 5000);
+
+  // === Back-to-top button ===
+  const toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', () => {
+    toTop.classList.toggle('show', window.scrollY > 400);
+  });
+  toTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 </script>
+
 <!-- At the bottom of index.html -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
 <script src="/inject.js"></script>

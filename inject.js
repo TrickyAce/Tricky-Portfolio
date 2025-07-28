@@ -7,13 +7,13 @@ fetch('about.json')
     document.getElementById('para2').textContent = data.para2;
   });
 
-// Fetch and inject FEATURED WORK
-document.addEventListener('DOMContentLoaded', () => {
+/* === Inject cards into #work .cards === */
+export function injectFeaturedWork() {
   fetch('featured.json')
     .then(res => res.json())
     .then(data => {
       const container = document.querySelector('#work .cards');
-      if (!container) return; // safety check
+      if (!container) return;
       container.innerHTML = '';
       data.projects.forEach(project => {
         const card = document.createElement('article');
@@ -28,10 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
         container.appendChild(card);
       });
-      // Trigger the scroll event so the new .reveal elements get the .show class
-      window.dispatchEvent(new Event('scroll'));
+
+      // Observe newly added .reveal cards
+      observeReveals(); // This function comes from main script
     });
-});
+}
+
 
 
 // Fetch and inject TESTIMONIALS
