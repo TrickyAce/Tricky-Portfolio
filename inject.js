@@ -8,25 +8,29 @@ fetch('about.json')
   });
 
 // Fetch and inject FEATURED WORK
-fetch('featured.json')
-  .then(res => res.json())
-  .then(data => {
-    const container = document.querySelector('#work .cards');
-    container.innerHTML = '';
-    data.projects.forEach(project => {
-      const card = document.createElement('article');
-      card.className = 'card reveal';
-      card.innerHTML = `
-        <img src="${project.image}" alt="${project.title}">
-        <div class="card-info">
-          <h3>${project.title}</h3>
-          <p class="small">${project.description}</p>
-          <a href="${project.link}" target="_blank" class="btn-text">Visit →</a>
-        </div>
-      `;
-      container.appendChild(card);
+document.addEventListener('DOMContentLoaded', () => {
+  fetch('featured.json')
+    .then(res => res.json())
+    .then(data => {
+      const container = document.querySelector('#work .cards');
+      if (!container) return; // safety check
+      container.innerHTML = '';
+      data.projects.forEach(project => {
+        const card = document.createElement('article');
+        card.className = 'card reveal';
+        card.innerHTML = `
+          <img src="${project.image}" alt="${project.title}">
+          <div class="card-info">
+            <h3>${project.title}</h3>
+            <p class="small">${project.description}</p>
+            <a href="${project.link}" target="_blank" class="btn-text">Visit →</a>
+          </div>
+        `;
+        container.appendChild(card);
+      });
     });
-  });
+});
+
 
 // Fetch and inject TESTIMONIALS
 fetch('testimonials.json')
