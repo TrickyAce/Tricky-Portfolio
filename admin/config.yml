@@ -23,6 +23,7 @@ collections:
       - file: "featured.json"
         label: "Featured Projects"
         name: "featured"
+        delete: true
         fields:
           - label: "Projects"
             name: "projects"
