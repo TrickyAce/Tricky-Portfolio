@@ -2,7 +2,15 @@
   "testimonials": [
     {
       "quote": "Sales jumped 32% the first week. Site loads before my coffee does.",
-      "name": "Ada.O"
+      "name": "Ada O."
+    },
+    {
+      "quote": "Looked global from day one. Customers thought we were a huge brand",
+      "name": "Tosin A."
+    },
+    {
+      "quote": "No more repeating the same answers!",
+      "name": "Chiamaka E."
     }
   ]
 }
