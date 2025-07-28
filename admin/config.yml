@@ -19,36 +19,13 @@ collections:
 
   - name: "featured"
     label: "Featured Work"
-    label_singular: "Work"
-    file: "featured.json"
-    fields:
-      - label: "Projects"
-        name: "projects"
-        widget: "list"
+    files:
+      - file: "featured.json"
+        label: "Featured Projects"
+        name: "featured"
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "string" }
-          - { label: "Image", name: "image", widget: "image" }
-          - { label: "Link", name: "link", widget: "string" }
-
-  - name: "testimonials"
-    label: "Client Love"
-    file: "testimonials.json"
-    fields:
-      - label: "Testimonials"
-        name: "testimonials"
-        widget: "list"
-        fields:
-          - { label: "Quote", name: "quote", widget: "text" }
-          - { label: "Name", name: "name", widget: "string" }
-
-  - name: "reactions"
-    label: "Client Reactions"
-    file: "reactions.json"
-    fields:
-      - label: "Reactions"
-        name: "reactions"
-        widget: "list"
-        fields:
-          - { label: "Image", name: "image", widget: "image" }
-          - { label: "Text", name: "text", widget: "string" }
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
