@@ -11,6 +11,12 @@
       "description": "A sleek fashion brand demo site for ready-to-wear pieces. Includes product galleries, WhatsApp ordering, and a smooth, mobile-first design.",
       "link": "https://macdeedemo.netlify.app/",
       "image": "/images/uploads/1005508979.jpg"
+    },
+    {
+      "image": "/images/uploads/1005339341.jpg",
+      "title": "Yafdha",
+      "description": "Tayag",
+      "link": "https://macdeedemo.netlify.app/"
     }
   ]
 }
