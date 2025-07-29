@@ -36,10 +36,14 @@
 <!-- ===== NAV ===== -->
 <nav class="nav">
   <a href="#top" class="logo">Tricky<span>Ace</span></a>
-  <ul class="nav-links">
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+    ☰
+  </button>
+  <ul class="nav-links" id="navLinks">
     <li><a href="#services">Services</a></li>
     <li><a href="#work">Work</a></li>
     <li><a href="#about">About</a></li>
+    <li><a href="#testimonials">Reviews</a></li> <!-- "Reviews" label, links to Client Love section -->
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -180,6 +184,20 @@
   });
   toTop.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+    const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+
+  // Optional: close nav on link click (for smooth UX)
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+    });
   });
 </script>
 
