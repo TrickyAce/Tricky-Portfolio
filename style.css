@@ -17,17 +17,15 @@ body{font-family:'Inter',sans-serif;background:#090d14;color:#e9eef3;line-height
 .nav{position:fixed;top:0;z-index:999;background:rgba(9,13,20,.8);backdrop-filter:blur(8px);display:flex;justify-content:center; animation:navFade 0.8s ease-out both; width: 100%; }
 .logo{font-size:1.5rem;font-weight:700;padding:1.1rem 1rem;color:var(--primary);}
 .logo{
-  animation:glowPulse 4s ease-in-out infinite;}
-.logo span{color:var(--accent)}
-/* keyframes for gentle pulsing glow */
-@keyframes glowPulse{
-  0%,100%{text-shadow:
-    0 0 6px rgba(0,214,255,.6),
-    0 0 12px rgba(0,214,255,.4);}
-  50%{text-shadow:
-    0 0 10px rgba(255,0,212,.8),
-    0 0 20px rgba(255,0,212,.6);}
+  color: var(--primary);
+  font-weight: 700;
+  text-shadow: none; /* removed the glow */
+  letter-spacing: 0.5px;
 }
+.logo span{
+  color: var(--accent);
+}
+
 .nav-links{display:flex;list-style:none;padding:.8rem 1rem;gap:1.4rem}
 .nav-links a{color:var(--muted);text-decoration:none;font-size:.9rem;}
 .nav-links a:hover{color:var(--primary)}
