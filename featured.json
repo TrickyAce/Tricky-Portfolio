@@ -7,16 +7,16 @@
       "image": "/images/uploads/1005508978.jpg"
     },
     {
-      "title": "MacDee RTW Website (Demo)",
-      "description": "A sleek fashion brand demo site for ready-to-wear pieces. Includes product galleries, WhatsApp ordering, and a smooth, mobile-first design.",
-      "link": "https://macdeedemo.netlify.app/",
-      "image": "/images/uploads/1005508979.jpg"
-    },
-    {
       "title": "Hhead2Toe - Global Brands Retailer ",
       "link": "https://hhead2toe.netlify.app/",
       "description": "One-page product catalog for a streetwear brand. Features clean sections for shoes, caps, socks, and more, with WhatsApp order buttons and mobile-first design.",
       "image": "/images/uploads/1005541117.jpg"
+    },
+    {
+      "title": "MacDee RTW Website (Demo)",
+      "description": "A sleek fashion brand demo site for ready-to-wear pieces. Includes product galleries, WhatsApp ordering, and a smooth, mobile-first design.",
+      "link": "https://macdeedemo.netlify.app/",
+      "image": "/images/uploads/1005508979.jpg"
     }
   ]
 }
