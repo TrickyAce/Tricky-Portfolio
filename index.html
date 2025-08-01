@@ -36,17 +36,22 @@
 <!-- ===== NAV ===== -->
 <nav class="nav">
   <a href="#top" class="logo">Tricky<span>Ace</span></a>
+
   <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-    ☰
+    <span></span>
+    <span></span>
+    <span></span>
   </button>
+
   <ul class="nav-links" id="navLinks">
     <li><a href="#services">Services</a></li>
     <li><a href="#work">Work</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#testimonials">Reviews</a></li> <!-- "Reviews" label, links to Client Love section -->
+    <li><a href="#testimonials">Reviews</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
+
 
 <!-- ===== HERO ===== -->
 <header id="top" class="hero">
@@ -144,7 +149,6 @@
 <!-- At the bottom of index.html -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
 <script src="/inject.js"></script>
-<script src="/inject.js"></script>
 <script>
   // === Scroll reveal observer ===
   const io = new IntersectionObserver((entries) => {
@@ -186,19 +190,22 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-    const navToggle = document.getElementById('navToggle');
+  const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
 
   navToggle.addEventListener('click', () => {
+    navToggle.classList.toggle('open');
     navLinks.classList.toggle('open');
   });
 
-  // Optional: close nav on link click (for smooth UX)
+  // Close menu on link click (mobile)
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
+      navToggle.classList.remove('open');
       navLinks.classList.remove('open');
     });
   });
+
 </script>
 
 </body>
