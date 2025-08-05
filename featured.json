@@ -1,6 +1,12 @@
 {
   "projects": [
     {
+      "title": "Portfolio Website ",
+      "description": "A clean premium portfolio website for a video editor ",
+      "image": "/images/uploads/1005597249.jpg",
+      "link": "https://clintonedits.netlify.app/"
+    },
+    {
       "title": "Hhead2Toe - Global Brands Retailer ",
       "link": "https://hhead2toe.netlify.app/",
       "description": "One-page product catalog for a streetwear brand. Features clean sections for shoes, caps, socks, and more, with WhatsApp order buttons and mobile-first design.",
@@ -13,16 +19,16 @@
       "image": "/images/uploads/1005508978.jpg"
     },
     {
-      "title": "OP GEMS – Jewelry Brand Website",
-      "description": "A sleek one-page website for a luxury jewelry vendor. Designed with their brand colors, black, pink, and gold, to highlight elegance. Features include product categories, WhatsApp ordering, scroll animations, and a mobile-friendly layout",
-      "link": "https://opgemsdemo.netlify.app/",
-      "image": "/images/uploads/1005563909.jpg"
-    },
-    {
       "title": "MacDee RTW Website (Demo)",
       "description": "A sleek fashion brand demo site for ready-to-wear pieces. Includes product galleries, WhatsApp ordering, and a smooth, mobile-first design.",
       "link": "https://macdeedemo.netlify.app/",
       "image": "/images/uploads/1005508979.jpg"
+    },
+    {
+      "title": "OP GEMS – Jewelry Brand Website",
+      "description": "A sleek one-page website for a luxury jewelry vendor. Designed with their brand colors, black, pink, and gold, to highlight elegance. Features include product categories, WhatsApp ordering, scroll animations, and a mobile-friendly layout",
+      "link": "https://opgemsdemo.netlify.app/",
+      "image": "/images/uploads/1005563909.jpg"
     }
   ]
 }
