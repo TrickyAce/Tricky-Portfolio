@@ -227,7 +227,7 @@ body{font-family:'Inter',sans-serif;background:#090d14;color:#e9eef3;line-height
 @media(min-width:780px){.about-wrapper{grid-template-columns:200px 1fr}}
 
  /* ===== SLIDER ===== */
-.slider{max-width:650px;margin:0 auto;position:relative}
+.slider{max-width:650px;margin:0 auto;position:relative; min-height: 150px;}
 .slide{display:none}
 .slide.current{display:block;animation:fadeIn .9s}
 blockquote{font-size:1.1rem;margin-bottom:.8rem;color:#fff;font-style:italic}
@@ -317,20 +317,31 @@ html, body {
 
 /* ===== CHAT TESTIMONIALS ===== */
 .chat-testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  max-width: 900px;
+  display: flex;
+  gap: 1rem;
+  transition: transform 0.4s ease;
+  will-change: transform;
+}
+
+.carousel-container {
+  position: relative;
+  max-width: 380px; /* adjust as needed */
   margin: 2rem auto 0 auto;
 }
 
+.chat-testimonials-wrapper {
+  overflow: hidden;
+}
+
+
 /* Main chat reaction box */
 .chat-bubble {
-  background: #9b3ca3;
+  min-width: 380px; 
+  background: #8432b3;
   border-radius: 1rem;
   box-shadow: 0 4px 20px rgba(0,0,0,0.05);
   overflow: hidden;
-  padding: 7px;
+  padding: 5px;
   position: relative;
   transition: transform 0.4s ease, opacity 0.4s ease;
   opacity: 1;
@@ -346,18 +357,32 @@ html, body {
 
 /* Chat bubble text */
 .chat-bubble p {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: #e7dbdb;
-  margin: 0;
+  margin: 0 10px;
   line-height: 1.5;
 }
 
-/* Optional name text styling */
-.client-name {
-  color: var(--muted);
-  font-style: italic;
-  margin-top: 0.4rem;
-  text-align: center;
-  width: 100%;
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #32137a;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  border-radius: 50%;
+  user-select: none;
+  z-index: 10;
 }
 
+.arrow-left {
+  left: -30px;
+}
+
+.arrow-right {
+  right: -30px;
+}

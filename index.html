@@ -124,10 +124,16 @@
 <!-- ===== CHAT TESTIMONIALS ===== -->
 <section id="chat-testimonials" class="section">
   <h2 class="section-title">Client Reaction</h2>
-  <div class="chat-testimonials-grid">
-    <!-- Reactions will be injected here by JS -->
+  <div class="carousel-container">
+    <button class="arrow arrow-left" aria-label="Previous">&#9664;</button>
+    <div class="chat-testimonials-wrapper">
+      <!-- Reactions injected here by JS -->
+      <div class="chat-testimonials-grid"></div>
+    </div>
+    <button class="arrow arrow-right" aria-label="Next">&#9654;</button>
   </div>
 </section>
+
 
 
 <!-- ===== CONTACT ===== -->
@@ -148,7 +154,7 @@
 <button id="toTop" aria-label="Back to top">↑</button>
 <!-- At the bottom of index.html -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
-<script src="/inject.js"></script>
+<script src="/inject.js" defer></script>
 <script>
   // === Scroll reveal observer ===
   const io = new IntersectionObserver((entries) => {
@@ -180,6 +186,8 @@
       slides[i].classList.add('current');
     }
   }, 5000);
+
+
 
   // === Back-to-top button ===
   const toTop = document.getElementById('toTop');
