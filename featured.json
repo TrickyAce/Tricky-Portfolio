@@ -1,6 +1,12 @@
 {
   "projects": [
     {
+      "title": "Huda's Bites",
+      "description": "A sleek dessert store website. Includes product galleries, WhatsApp ordering, and a smooth, design.",
+      "link": "https://hudasbites.netlify.app/",
+      "image": "/images/uploads/1005668312.webp"
+    },
+    {
       "title": "ClintonEdits Portfolio Website",
       "description": "A clean, premium portfolio website for a video editor ",
       "image": "/images/uploads/1005608423.webp",
@@ -17,12 +23,6 @@
       "link": "https://deegeedemo.netlify.app/",
       "description": "A clean, mobile-friendly demo for a furniture brand. Features product categories, direct WhatsApp ordering, and a simple, fast UI.",
       "image": "/images/uploads/deegee.webp"
-    },
-    {
-      "title": "MacDee RTW Website (Demo)",
-      "description": "A sleek fashion brand demo site for ready-to-wear pieces. Includes product galleries, WhatsApp ordering, and a smooth, mobile-first design.",
-      "link": "https://macdeedemo.netlify.app/",
-      "image": "/images/uploads/macdee.webp"
     }
   ]
 }
